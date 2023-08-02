@@ -5,7 +5,7 @@ metadata:
   name: knative-serving-crds
   namespace: flux-system
 spec:
-  interval: 30m0s
+  interval: 3m0s
   path: ./releases/download/knative-v1.10.2/serving-crds.yaml
   prune: true
   retryInterval: 2m0s
