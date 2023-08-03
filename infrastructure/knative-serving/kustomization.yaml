@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - serving-crds.yaml
   - serving-core.yaml
+  - kourier.yaml
