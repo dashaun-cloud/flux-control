@@ -20,7 +20,7 @@ metadata:
   name: knative-serving
   namespace: knative-serving
 spec:
-  depends-on:
+  dependsOn:
     - name: namespaces
   interval: 1m
   sourceRef:
