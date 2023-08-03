@@ -20,8 +20,6 @@ metadata:
   name: knative-serving
   namespace: knative-serving
 spec:
-  dependsOn:
-    - name: namespaces
   interval: 1m
   sourceRef:
     kind: GitRepository
