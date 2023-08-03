@@ -12,29 +12,29 @@ spec:
   prune: true
   wait: true
   timeout: 5m
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1
-kind: Kustomization
-metadata:
-  name: knative-config
-spec:
-  dependsOn:
-    - name: knative-serving
-  interval: 1m
-  serviceAccountName: kustomize-controller
-  prune: true
-  wait: true
-  timeout: 5m
-  patches:
-    - patch: |-
-        {"data":{"ingress-class":"kourier.ingress.networking.knative.dev"}}        
-      target:
-        kind: configmap
-        namespace: knative-serving
-        name: config-network
-    - patch: |-
-        '{"data":{"knative.dashaun.cloud":""}}'       
-      target:
-        kind: configmap
-        namespace: knative-serving
-        name: config-domain
+#---
+#apiVersion: kustomize.toolkit.fluxcd.io/v1
+#kind: Kustomization
+#metadata:
+#  name: knative-config
+#spec:
+#  dependsOn:
+#    - name: knative-serving
+#  interval: 1m
+#  serviceAccountName: kustomize-controller
+#  prune: true
+#  wait: true
+#  timeout: 5m
+#  patches:
+#    - patch: |-
+#        {"data":{"ingress-class":"kourier.ingress.networking.knative.dev"}}        
+#      target:
+#        kind: configmap
+#        namespace: knative-serving
+#        name: config-network
+#    - patch: |-
+#        '{"data":{"knative.dashaun.cloud":""}}'       
+#      target:
+#        kind: configmap
+#        namespace: knative-serving
+#        name: config-domain
