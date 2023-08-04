@@ -10,10 +10,10 @@ metadata:
   namespace: knative-serving
 spec:
   ingress:
-    contour:
+    kourier:
       enabled: true
   config:
     domain:
       "knative.dashaun.cloud" : ""
     network:
-      ingress-class: "contour.ingress.networking.knative.dev"
+      ingress-class: "kourier.ingress.networking.knative.dev"
