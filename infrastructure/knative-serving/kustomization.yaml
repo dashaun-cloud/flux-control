@@ -1,6 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - serving-crds.yaml
-  - serving-core.yaml
-  - kourier.yaml
+  - https://github.com/knative/serving/releases/download/knative-v1.11.0/serving-crds.yaml
+  - https://github.com/knative/serving/releases/download/knative-v1.11.0/serving-core.yaml
+  - https://github.com/knative/net-kourier/releases/download/knative-v1.11.1/kourier.yaml
