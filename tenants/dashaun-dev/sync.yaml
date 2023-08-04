@@ -1,0 +1,23 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: dashaun-dev
+  namespace: dashaun-dev
+spec:
+  interval: 1m
+  url: https://github.com/dashaun-dev/flux
+  ref:
+    branch: main
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: dashaun-dev
+  namespace: dashaun-dev
+spec:
+  serviceAccountName: dashaun-dev
+  interval: 5m
+  sourceRef:
+    kind: GitRepository
+    name: dashaun-dev
+  prune: true
