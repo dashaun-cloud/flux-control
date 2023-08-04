@@ -13,5 +13,7 @@ spec:
     kourier:
       enabled: true
   config:
+    domain:
+      "knative.dashaun.cloud" : ""
     network:
       ingress-class: "kourier.ingress.networking.knative.dev"
