@@ -6,10 +6,13 @@ metadata:
 spec:
   dependsOn:
     - name: knative-serving
-  interval: 5m
+  interval: 1m
+  path: ./tenants/dashaun-dev
+  prune: true
+  retryInterval: 2m0s
   serviceAccountName: kustomize-controller
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./tenants/dashaun-dev
-  prune: true
+  timeout: 5m
+  wait: true
