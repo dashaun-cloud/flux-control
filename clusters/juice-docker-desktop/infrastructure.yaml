@@ -12,6 +12,5 @@ spec:
     kind: GitRepository
     name: flux-system
   serviceAccountName: kustomize-controller
-  targetNamespace: knative-serving
   timeout: 5m
   wait: true
