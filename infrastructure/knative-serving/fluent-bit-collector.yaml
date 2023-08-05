@@ -141,7 +141,7 @@ spec:
         - name: FLUENT_PORT
           value: "24224"
       - name: nginx
-        image: nginx/nginx:latest
+        image: nginx:latest
         ports:
         - containerPort: 8080
           name: viewer
