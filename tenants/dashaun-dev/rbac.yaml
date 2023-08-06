@@ -3,18 +3,16 @@ apiVersion: v1
 kind: Namespace
 metadata:
   labels:
-    toolkit.fluxcd.io/tenant: dev-team
-  name: apps
-
+    toolkit.fluxcd.io/tenant: dashaun-dev
+  name: dashaun-dev
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
   labels:
-    toolkit.fluxcd.io/tenant: dev-team
-  name: dev-team
-  namespace: apps
-
+    toolkit.fluxcd.io/tenant: dashaun-dev
+  name: dashaun-dev
+  namespace: dashaun-dev
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
