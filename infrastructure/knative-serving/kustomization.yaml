@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
 - https://github.com/knative/operator/releases/download/knative-v1.11.1/operator.yaml
 - knative-serving.yaml
-- fluent-bit-collector.yaml
 - logging-pv.yaml
+- fluent-bit-collector.yaml

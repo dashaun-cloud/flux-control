@@ -163,3 +163,7 @@ spec:
     spec:
       accessModes: [ "ReadWriteOnce" ]
       volumeName: shared-logs
+      resources:
+        requests:
+          storage: 1Gi
+      storageClassName: manual

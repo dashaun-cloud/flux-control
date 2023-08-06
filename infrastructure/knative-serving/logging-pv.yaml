@@ -16,4 +16,4 @@ spec:
   capacity:
     storage: 5Gi
   hostPath:
-    path: /Users/dashaun
+    path: "/Users/dashaun"
