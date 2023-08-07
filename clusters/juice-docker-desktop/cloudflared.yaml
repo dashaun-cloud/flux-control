@@ -66,11 +66,11 @@ data:
     no-autoupdate: true
     ingress:
     - hostname: dashaun.dev
-      service: http://kourier-internal.kourier-system.svc.cluster.local:80
+      service: http://kourier-internal.knative-serving.svc.cluster.local:80
       originRequest:
         httpHostHeader: gateway-service.dashaun-dev.knative.dashaun.cloud
     - hostname: auth.dashaun.dev
-      service: http://kourier-internal.kourier-system.svc.cluster.local:80
+      service: http://kourier-internal.knative-serving.svc.cluster.local:80
       originRequest:
         httpHostHeader: authorization-service.dashaun-dev.knative.dashaun.cloud
     - service: http_status:404
