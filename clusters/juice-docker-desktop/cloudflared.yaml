@@ -73,4 +73,8 @@ data:
       service: http://kourier-internal.knative-serving.svc.cluster.local:80
       originRequest:
         httpHostHeader: authorization-service.dashaun-dev.knative.dashaun.cloud
+    - hostname: image-service.springofficehours.io
+      service: http://kourier-internal.knative-serving.svc.cluster.local:80
+      originRequest:
+        httpHostHeader: image-service.springofficehours-io.knative.dashaun.cloud
     - service: http_status:404
