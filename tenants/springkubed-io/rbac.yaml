@@ -1,0 +1,33 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    toolkit.fluxcd.io/tenant: springkubed-io
+  name: springkubed-io
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    toolkit.fluxcd.io/tenant: springkubed-io
+  name: springkubed-io
+  namespace: springkubed-io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  labels:
+    toolkit.fluxcd.io/tenant: springkubed-io
+  name: gotk-reconciler
+  namespace: springkubed-io
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: User
+    name: gotk:springkubed-io:reconciler
+  - kind: ServiceAccount
+    name: springkubed-io
+    namespace: springkubed-io
