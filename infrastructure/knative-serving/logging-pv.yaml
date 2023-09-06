@@ -17,3 +17,4 @@ spec:
     storage: 5Gi
   hostPath:
     path: "/Users/dashaun/knative-serving-pv"
+    type: DirectoryOrCreate
