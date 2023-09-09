@@ -21,7 +21,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: fluent/fluent-bit
+      chart: fluent-bit
       sourceRef:
         kind: HelmRepository
         name: fluent-bit
