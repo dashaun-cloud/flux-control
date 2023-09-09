@@ -4,6 +4,8 @@ metadata:
   name: metrics-server
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: cert-manager
   interval: 1m
   path: ./infrastructure/metrics-server
   prune: true
