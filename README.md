@@ -3,7 +3,7 @@
 ## juice-docker-desktop
 
 ```bash
-kustomize build ./env/juice-docker-desktop | envsubst | kubectl apply -f -
+kustomize build ./env/dashaun-dev-tunnel | envsubst | kubectl apply -f -
 ```
 
 ```bash
