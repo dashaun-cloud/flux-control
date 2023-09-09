@@ -14,3 +14,37 @@ spec:
   serviceAccountName: kustomize-controller
   timeout: 5m
   wait: true
+---  
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: fluent
+  namespace: flux-system
+spec:
+  interval: 1m
+  path: ./infrastructure/fluent
+  prune: true
+  retryInterval: 2m0s
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  serviceAccountName: kustomize-controller
+  timeout: 5m
+  wait: true
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: elastic
+  namespace: flux-system
+spec:
+  interval: 1m
+  path: ./infrastructure/elastic
+  prune: true
+  retryInterval: 2m0s
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  serviceAccountName: kustomize-controller
+  timeout: 5m
+  wait: true      
