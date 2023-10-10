@@ -68,5 +68,5 @@ data:
     - hostname: intro.dashaun.io
       service: http://kourier-internal.knative-serving.svc.cluster.local:80
       originRequest:
-        httpHostHeader: intro-web.dashaun-io.knative.dashaun.cloud
+        httpHostHeader: demo.default.knative.dashaun.cloud 
     - service: http_status:404
