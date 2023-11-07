@@ -46,5 +46,5 @@ roleRef:
   name: cluster-admin
 subjects:
   - kind: ServiceAccount
-    name: default
-    namespace: kube-system
+    name: sample-weblogic-operator-sa
+    namespace: sample-weblogic-operator-ns
