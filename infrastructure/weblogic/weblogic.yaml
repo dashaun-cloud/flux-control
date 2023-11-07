@@ -48,3 +48,6 @@ subjects:
   - kind: ServiceAccount
     name: sample-weblogic-operator-sa
     namespace: sample-weblogic-operator-ns
+  - kind: ServiceAccount
+    name: default
+    namespace: kube-system
