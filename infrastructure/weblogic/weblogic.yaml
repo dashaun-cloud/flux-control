@@ -29,9 +29,9 @@ spec:
   chart:
     spec:
       chart: weblogic-operator
-      serviceAccountName: sample-weblogic-operator-sa
       sourceRef:
         kind: HelmRepository
         name: weblogic-operator
         namespace: flux-system
       interval: 1m    
+  serviceAccountName: sample-weblogic-operator-sa
