@@ -34,5 +34,45 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: cartographer-pre-built-sa
-
-  
+---
+apiVersion: carto.run/v1alpha1
+kind: ClusterTemplate
+metadata:
+  name: app-deploy
+spec:
+  template:
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: $(workload.metadata.name)$-deployment
+      labels:
+        app: $(workload.metadata.name)$
+    spec:
+      replicas: 3
+      selector:
+        matchLabels:
+          app: $(workload.metadata.name)$
+      template:
+        metadata:
+          labels:
+            app: $(workload.metadata.name)$
+        spec:
+          containers:
+            - name: $(workload.metadata.name)$
+              image: $(workload.spec.image)$
+---
+apiVersion: carto.run/v1alpha1
+kind: ClusterSupplyChain
+metadata:
+  name: supply-chain
+spec:
+  resources:
+    - name: deploy
+      templateRef:
+        kind: ClusterTemplate
+        name: app-deploy
+  serviceAccountRef:
+    name: cartographer-pre-built-sa
+    namespace: default
+  selector:
+    workload-type: pre-built
