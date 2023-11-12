@@ -80,3 +80,12 @@ spec:
     namespace: default
   selector:
     workload-type: pre-built
+---
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: hello
+  labels:
+    workload-type: pre-built
+spec:
+  image: docker.io/nginxdemos/hello:latest    
