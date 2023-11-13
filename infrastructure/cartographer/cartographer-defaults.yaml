@@ -94,3 +94,13 @@ metadata:
     workload-type: pre-built
 spec:
   image: docker.io/nginxdemos/hello:latest    
+---
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: whale-hello-there
+  namespace: cartographer
+  labels:
+    workload-type: pre-built
+spec:
+  image: docker.io/crccheck/hello-world:latest
