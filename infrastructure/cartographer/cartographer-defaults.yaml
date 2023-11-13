@@ -85,11 +85,6 @@ spec:
   selector:
     workload-type: pre-built
 ---
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: hello
----
 apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
