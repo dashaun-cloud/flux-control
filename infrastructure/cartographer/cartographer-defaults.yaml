@@ -94,7 +94,7 @@ apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
   name: hello
-  namespace: hello
+  namespace: cartographer
   labels:
     workload-type: pre-built
 spec:
