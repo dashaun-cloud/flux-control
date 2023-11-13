@@ -81,7 +81,7 @@ spec:
         name: app-deploy
   serviceAccountRef:
     name: cartographer-pre-built-sa
-    namespace: default
+    namespace: cartographer
   selector:
     workload-type: pre-built
 ---
