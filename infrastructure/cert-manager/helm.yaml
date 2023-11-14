@@ -28,6 +28,20 @@ spec:
         namespace: flux-system
       interval: 1m
   values:
+    image:
+      repository: giantswarm/cert-manager-controller
+    webhook:
+      image:
+        repository: giantswarm/cert-manager-webhook
+    cainjector:
+      image:
+        repository: giantswarm/cert-manager-cainjector
+    acmesolver:
+      image:
+        repository: giantswarm/cert-manager-acmesolver
+    startupapicheck:
+      image:
+        repository: giantswarm/cert-manager-ctl
     installCRDs: true
     prometheus:
       enabled: true
