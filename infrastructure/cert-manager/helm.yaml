@@ -30,9 +30,6 @@ spec:
   values:
     image:
       repository: giantswarm/cert-manager-controller
-    webhook:
-      image:
-        repository: giantswarm/cert-manager-webhook
     cainjector:
       image:
         repository: giantswarm/cert-manager-cainjector
@@ -52,5 +49,7 @@ spec:
           release: prometheus
     webhook:
       enabled: true
+      image:
+        repository: giantswarm/cert-manager-webhook
       service:
         type: ClusterIP
