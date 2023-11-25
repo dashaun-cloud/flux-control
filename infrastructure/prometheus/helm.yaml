@@ -49,3 +49,7 @@ spec:
                   - 100.94.235.91:9100
                 labels:
                   instance: kaikaku
+              - targets:
+                  - 100.98.42.132:9100
+                labels:
+                  instance: senshin    
