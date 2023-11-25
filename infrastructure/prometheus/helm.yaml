@@ -42,7 +42,7 @@ spec:
                 labels:
                   instance: satellite  
               - targets:
-                  - 100.86.31.107:9100
+                  - 100.77.29.51:9100
                 labels:
                   instance: kaizen
               - targets:
