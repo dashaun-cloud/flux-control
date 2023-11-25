@@ -50,6 +50,10 @@ spec:
                 labels:
                   instance: kaikaku
               - targets:
+                  - 100.77.129.77:9100
+                labels:
+                  instance: kaitaku
+              - targets:
                   - 100.98.42.132:9100
                 labels:
                   instance: senshin    
