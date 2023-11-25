@@ -45,3 +45,7 @@ spec:
                   - 100.86.31.107:9100
                 labels:
                   instance: kaizen
+              - targets:
+                  - 100.94.235.91:9100
+                labels:
+                  instance: kaikaku
