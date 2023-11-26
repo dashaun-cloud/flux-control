@@ -1210,6 +1210,9 @@ spec:
           - targets: ['100.67.74.147:9100']
             labels:
               instance: 'poe01s0'
+          - targets: ['100.93.234.120:9100']
+            labels:
+              instance: 'ampere'
       # - job_name: 'prometheus-blackbox-exporter'
       #   metrics_path: /probe
       #   params:
