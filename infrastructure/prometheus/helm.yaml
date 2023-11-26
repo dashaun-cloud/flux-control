@@ -57,5 +57,8 @@ spec:
               host: senshin
               instance: senshin
     prometheus-node-exporter:
-      service:
-        targetPort: 9101
+      enabled: false
+      rbac:
+        pspEnabled: false
+      containerSecurityContext:
+        allowPrivilegeEscalation: false
