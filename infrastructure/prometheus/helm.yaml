@@ -1213,6 +1213,9 @@ spec:
           - targets: ['100.93.234.120:9100']
             labels:
               instance: 'ampere'
+          - targets: ['100.108.108.58:9100']
+            labels:
+              instance: 'clusterhat00'
       # - job_name: 'prometheus-blackbox-exporter'
       #   metrics_path: /probe
       #   params:
