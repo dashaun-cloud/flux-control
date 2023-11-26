@@ -40,22 +40,27 @@ spec:
               - targets:
                   - 100.86.31.107:9100
                 labels:
-                  instance: satellite  
+                  host: satellite
+                  instance: satellite
               - targets:
                   - 100.77.29.51:9100
                 labels:
+                  host: kaizen
                   instance: kaizen
               - targets:
                   - 100.94.235.91:9100
                 labels:
+                  host: kaikaku
                   instance: kaikaku
               - targets:
                   - 100.77.129.77:9100
                 labels:
+                  host: kaitaku
                   instance: kaitaku
               - targets:
                   - 100.98.42.132:9100
                 labels:
-                  instance: senshin    
+                  host: senshin    
+                  instance: senshin
     prometheus-node-exporter:
       targetPort: 9101
