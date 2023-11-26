@@ -61,6 +61,6 @@ spec:
                   - 100.98.42.132:9100
                 labels:
                   host: senshin    
-                  instance: senshin
     prometheus-node-exporter:
-      targetPort: 9101
+      service:
+        targetPort: 9101
