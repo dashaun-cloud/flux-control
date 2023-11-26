@@ -1270,7 +1270,7 @@ spec:
     prometheus-node-exporter:
       ## If false, node-exporter will not be installed
       ##
-      enabled: true
+      enabled: false
     
       rbac:
         pspEnabled: false
