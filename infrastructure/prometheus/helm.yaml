@@ -1204,6 +1204,12 @@ spec:
           - targets: ['100.98.42.132:9100']
             labels:
               instance: 'senshin'
+          - targets: ['100.96.46.84:9100']
+            labels:
+              instance: 'poe01s1'
+          - targets: ['100.67.74.147:9100']
+            labels:
+              instance: 'poe01s0'
       # - job_name: 'prometheus-blackbox-exporter'
       #   metrics_path: /probe
       #   params:
