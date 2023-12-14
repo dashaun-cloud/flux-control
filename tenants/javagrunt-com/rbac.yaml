@@ -1,0 +1,33 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    toolkit.fluxcd.io/tenant: javagrunt-com
+  name: javagrunt-com
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    toolkit.fluxcd.io/tenant: javagrunt-com
+  name: javagrunt-com
+  namespace: javagrunt-com
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  labels:
+    toolkit.fluxcd.io/tenant: javagrunt-com
+  name: gotk-reconciler
+  namespace: javagrunt-com
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: User
+    name: gotk:javagrunt-com:reconciler
+  - kind: ServiceAccount
+    name: javagrunt-com
+    namespace: javagrunt-com
