@@ -57,7 +57,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: cloudflared
-  namespace: dashaun-io
+  namespace: javagrunt-com
 data:
   config.yaml: |
     tunnel: javagrunt-com
