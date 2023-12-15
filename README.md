@@ -13,3 +13,9 @@ flux bootstrap github \
   --branch=main \
   --path=./clusters/$(kubectx -c)
 ```
+
+## k3d setup
+
+```bash
+k3d cluster create juice --k3s-arg "--disable=traefik@server:0"
+```
