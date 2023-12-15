@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cloudflared
-  namespace: cloudflared
+  namespace: dashaun-io
 spec:
   selector:
     matchLabels:
@@ -57,7 +57,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: cloudflared
-  namespace: cloudflared
+  namespace: dashaun-io
 data:
   config.yaml: |
     tunnel: dashaun-io
