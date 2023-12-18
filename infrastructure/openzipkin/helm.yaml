@@ -21,7 +21,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: openzipkin
+      chart: openzipkin/zipkin
       sourceRef:
         kind: HelmRepository
         name: openzipkin
