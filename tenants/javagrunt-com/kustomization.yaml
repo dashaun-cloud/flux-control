@@ -4,3 +4,4 @@ resources:
 - rbac.yaml
 - sync.yaml
 - cloudflared.yaml
+- openzipkin.yaml
