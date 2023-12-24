@@ -20,7 +20,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./clusters/basement
+  path: ./clusters/arm64
   prune: true
   sourceRef:
     kind: GitRepository
