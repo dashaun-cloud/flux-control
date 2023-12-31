@@ -65,12 +65,12 @@ data:
     metrics: 0.0.0.0:2000
     no-autoupdate: true
     ingress:
-    - hostname: zipkin.javagrunt.com
-      service: http://openzipkin.javagrunt-com.svc.cluster.local:9411
-      originRequest:
-        httpHostHeader: zipkin.openzipkin.knative.dashaun.cloud
-    - hostname: youtube-listener.javagrunt.com
+    - hostname: "javagrunt.com"
       service: http://kourier-internal.knative-serving.svc.cluster.local:80
       originRequest:
-        httpHostHeader: youtube-listener.javagrunt-com.knative.dashaun.cloud
+        httpHostHeader: gateway-service.javagrunt-com.knative.dashaun.cloud
+    - hostname: "*.javagrunt.com"
+      service: http://kourier-internal.knative-serving.svc.cluster.local:80
+      originRequest:
+        httpHostHeader: gateway-service.javagrunt-com.knative.dashaun.cloud
     - service: http_status:404
