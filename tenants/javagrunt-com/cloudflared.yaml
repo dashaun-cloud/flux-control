@@ -69,6 +69,4 @@ data:
       service: http://gateway-service.javagrunt-com.svc.cluster.local
     - hostname: "*.javagrunt.com"
       service: http://gateway-service.javagrunt-com.svc.cluster.local
-      originRequest:
-        httpHostHeader: "$1.javagrunt.com"
     - service: http_status:404
