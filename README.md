@@ -17,7 +17,9 @@ flux bootstrap github \
 ## k3s setup
 
 ```bash
-k3sup install --ip 100.94.235.91 --user dashaun --local-path ~/.kube/config --merge --k3s-extra-args '--disable traefik' --context nucs
+k3sup install --ip  100.93.234.120 --user dashaun --local-path ~/.kube/config --merge --k3s-extra-args '--disable traefik' --context arm64
+
+k3sup join --ip $AGENT_IP --server-ip $SERVER_IP --user dashaun
 ```
 
 ## k3d setup
@@ -39,4 +41,20 @@ On the node with the kubeconfig:
 kubectl config delete-user nucs
 kubectl config delete-context nucs
 kubectl config delete-cluster nucs
+```
+## Import Cluster Public Key
+
+```bash
+gpg --import ./clusters/$(kubectx -c)/.sops.pub.asc
+```
+
+## Configure directory for encryption
+
+```bash
+cat <<EOF > ./clusters/$(kubectx -c)/secrets/.sops.yaml
+creation_rules:
+  - path_regex: .*.yaml
+    encrypted_regex: ^(data|stringData)$
+    pgp: ${K3D_JUICE_KEY_FP}
+EOF
 ```
