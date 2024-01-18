@@ -34,5 +34,7 @@ spec:
     name: flux-system
   timeout: 5m
   wait: true
-  decryption-provider: sops
-  decryption-secret: sops-gpg
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
