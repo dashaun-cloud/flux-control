@@ -25,6 +25,10 @@ k3sup join --ip $AGENT_IP --server-ip $SERVER_IP --user dashaun
 ## k3d setup
 
 ```bash
+#delete cluster
+k3d cluster delete juice
+
+#create cluster
 k3d cluster create juice --k3s-arg "--disable=traefik@server:0"
 ```
 
