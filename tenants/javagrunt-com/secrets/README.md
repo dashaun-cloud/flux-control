@@ -20,5 +20,12 @@ kubectl -n javagrunt-com create secret generic yugabyte-cloud \
 ```
 
 ```bash
+kubectl -n javagrunt-com create secret generic tunnel-credentials \
+--from-literal=credentials.json=$(bw get item javagrunt-com-tunnel-secret | jq -r .login.password) \
+--dry-run=client\
+-o yaml > cloudflared-tunnel.yaml
+```
+
+```bash
 sops --encrypt --in-place yugabyte-cloud.yaml
 ```
