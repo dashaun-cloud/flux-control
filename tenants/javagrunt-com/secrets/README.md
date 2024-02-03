@@ -1,5 +1,7 @@
 ## An Example of how to create secrets with SOPS and PGP
 
+[Guide](https://fluxcd.io/flux/guides/mozilla-sops/)
+
 ```bash
 flux create kustomization secrets \
 --source=flux-system \
