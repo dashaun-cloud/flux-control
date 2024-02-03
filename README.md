@@ -7,6 +7,13 @@ kustomize build ./env/dashaun-dev-tunnel | envsubst | kubectl apply -f -
 ```
 
 ```bash
+gpg --export-secret-keys --armor "${ARM64_KEY_FP}" |
+kubectl create secret generic sops-gpg \
+--namespace=flux-system \
+--from-file=sops.asc=/dev/stdin
+```
+
+```bash
 flux bootstrap github \
   --owner=$GITHUB_USER \
   --repository=flux-control \
