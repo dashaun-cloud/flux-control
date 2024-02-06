@@ -1,0 +1,24 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: openzipkin
+  namespace: flux-system
+spec:
+  interval: 1m
+  url: https://openzipkin.github.io/zipkin
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: openzipkin
+  namespace: javagrunt-com
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: zipkin
+      sourceRef:
+        kind: HelmRepository
+        name: openzipkin
+        namespace: flux-system
+      interval: 1m
