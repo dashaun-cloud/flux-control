@@ -2,23 +2,21 @@
 
 ## juice-docker-desktop
 
-```bash
-kustomize build ./env/dashaun-dev-tunnel | envsubst | kubectl apply -f -
-```
-
-```bash
-gpg --export-secret-keys --armor "${ARM64_KEY_FP}" |
-kubectl create secret generic sops-gpg \
---namespace=flux-system \
---from-file=sops.asc=/dev/stdin
-```
-
+Bootstrap the cluster with flux:
 ```bash
 flux bootstrap github \
   --owner=$GITHUB_USER \
   --repository=flux-control \
   --branch=main \
   --path=./clusters/$(kubectx -c)
+```
+
+Add the private key to the cluster for SOPS:
+```bash
+gpg --export-secret-keys --armor "${ARM64_KEY_FP}" |
+kubectl create secret generic sops-gpg \
+--namespace=flux-system \
+--from-file=sops.asc=/dev/stdin
 ```
 
 ## k3s setup

@@ -1,8 +1,8 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: javagrunt-com-dev
-  namespace: javagrunt-com
+  name: dev-javagrunt-com
+  namespace: dev-javagrunt-com
 spec:
   interval: 1m
   url: https://github.com/javagrunt-com/flux
@@ -12,12 +12,12 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: javagrunt-com
-  namespace: javagrunt-com
+  name: dev-javagrunt-com
+  namespace: dev-javagrunt-com
 spec:
-  serviceAccountName: javagrunt-com
+  serviceAccountName: dev-javagrunt-com
   interval: 5m
   sourceRef:
     kind: GitRepository
-    name: javagrunt-com-dev
+    name: dev-javagrunt-com
   prune: true
