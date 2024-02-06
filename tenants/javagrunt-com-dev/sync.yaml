@@ -1,13 +1,13 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: javagrunt-com
+  name: javagrunt-com-dev
   namespace: javagrunt-com
 spec:
   interval: 1m
   url: https://github.com/javagrunt-com/flux
   ref:
-    branch: main
+    branch: keda
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -19,5 +19,5 @@ spec:
   interval: 5m
   sourceRef:
     kind: GitRepository
-    name: javagrunt-com
+    name: javagrunt-com-dev
   prune: true
