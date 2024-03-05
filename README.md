@@ -30,11 +30,18 @@ k3sup join --ip $AGENT_IP --server-ip $SERVER_IP --user dashaun
 ## k3d setup
 
 ```bash
+k3d registry create juice --port 0.0.0.0:5000
+```
+
+```bash
 #delete cluster
 k3d cluster delete juice
 
 #create cluster
 k3d cluster create juice --k3s-arg "--disable=traefik@server:0"
+
+#create cluster using local registry
+k3d cluster create juice --registry-use k3d-juice:5000 --k3s-arg "--disable=traefik@server:0"
 ```
 
 ## Cleanup
