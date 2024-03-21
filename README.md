@@ -44,6 +44,14 @@ k3d cluster create juice --k3s-arg "--disable=traefik@server:0"
 k3d cluster create juice --registry-use k3d-juice:5000 --k3s-arg "--disable=traefik@server:0"
 ```
 
+## Special step for Korifi
+
+```bash
+kubectl --namespace "$ROOT_NAMESPACE" create secret docker-registry image-registry-credentials \
+    --docker-username="$DOCKER_USERNAME" \
+    --docker-password="$DOCKER_TOKEN"
+````
+
 ## Cleanup
 
 On the control node:
