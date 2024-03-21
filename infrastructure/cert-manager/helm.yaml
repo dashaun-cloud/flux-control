@@ -28,28 +28,5 @@ spec:
         namespace: flux-system
       interval: 1m
   values:
-    image:
-      repository: giantswarm/cert-manager-controller
-    cainjector:
-      image:
-        repository: giantswarm/cert-manager-cainjector
-    acmesolver:
-      image:
-        repository: giantswarm/cert-manager-acmesolver
-    startupapicheck:
-      image:
-        repository: giantswarm/cert-manager-ctl
     installCRDs: true
-    prometheus:
-      enabled: true
-      serviceMonitor:
-        enabled: true
-        namespace: monitoring
-        additionalLabels:
-          release: prometheus
-    webhook:
-      enabled: true
-      image:
-        repository: giantswarm/cert-manager-webhook
-      service:
-        type: ClusterIP
+    version: v1.14.4
