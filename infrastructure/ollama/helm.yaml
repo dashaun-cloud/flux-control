@@ -27,3 +27,8 @@ spec:
         name: ollama-helm
         namespace: flux-system
       interval: 5m
+  values:
+    ollama:
+      models:
+        - mistral
+        - llama2
