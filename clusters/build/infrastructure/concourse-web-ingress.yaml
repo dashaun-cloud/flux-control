@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: basic
+spec:
+  rules:
+    - host: kaitaku
+      http:
+        paths:
+          - backend:
+              service:
+                name: concourse-web
+                port:
+                  number: 8080
+            pathType: Prefix
