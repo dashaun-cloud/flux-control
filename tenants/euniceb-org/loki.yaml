@@ -1,24 +1,24 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: openzipkin
+  name: grafana
   namespace: flux-system
 spec:
   interval: 1m
-  url: https://openzipkin.github.io/zipkin
+  url: https://grafana.github.io/helm-charts
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: openzipkin
-  namespace: dashaun-cloud
+  name: loki
+  namespace: javagrunt-com
 spec:
   interval: 5m
   chart:
     spec:
-      chart: zipkin
+      chart: loki
       sourceRef:
         kind: HelmRepository
-        name: openzipkin
+        name: grafana
         namespace: flux-system
       interval: 1m
