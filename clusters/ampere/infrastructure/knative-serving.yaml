@@ -4,6 +4,8 @@ metadata:
   name: knative-serving
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: cilium
   interval: 1m
   path: ./infrastructure/knative-serving-arm64
   prune: true
