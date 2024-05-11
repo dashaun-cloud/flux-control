@@ -14,3 +14,19 @@ spec:
   serviceAccountName: kustomize-controller
   timeout: 5m
   wait: true
+  
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana
+  namespace: grafana
+  annotations:
+    service.cilium.io/global: "true"
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+  selector:
+    name: grafana
+    namespace: grafana
