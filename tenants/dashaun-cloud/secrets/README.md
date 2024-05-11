@@ -3,7 +3,7 @@
 [Guide](https://fluxcd.io/flux/guides/mozilla-sops/)
 
 ```bash
-flux create kustomization secrets \
+flux create kustomization dashaun-cloud-secrets \
 --source=flux-system \
 --path=./tenants/dashaun-cloud/secrets \
 --prune=true \
