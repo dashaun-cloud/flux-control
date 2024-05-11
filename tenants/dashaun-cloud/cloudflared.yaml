@@ -66,5 +66,5 @@ data:
     no-autoupdate: true
     ingress:
     - hostname: grafana.dashaun.cloud
-      service: http://grafana.grafana.svc.cluster.local
+      service: http://grafana.grafana.svc.cluster.local:3000
     - service: http_status:404
