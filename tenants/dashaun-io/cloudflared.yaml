@@ -69,7 +69,7 @@ data:
       service: http://kourier-internal.knative-serving.svc.cluster.local:80
       originRequest:
         httpHostHeader: gateway-service.dashaun-io.knative.dashaun.cloud
-    - hostname: "intro.dashaun.io"
+    - hostname: intro.dashaun.io
       service: http://kourier-internal.knative-serving.svc.cluster.local:80
       originRequest:
         httpHostHeader: intro-web.dashaun-io.knative.dashaun.cloud    
