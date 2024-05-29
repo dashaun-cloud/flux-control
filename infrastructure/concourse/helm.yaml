@@ -31,3 +31,5 @@ spec:
     concourse:
       web:
         externalUrl: https://dashaun.cloud
+      worker:
+        runtime: houdini
