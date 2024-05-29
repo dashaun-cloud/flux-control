@@ -67,4 +67,8 @@ data:
     ingress:
     - hostname: grafana.dashaun.cloud
       service: http://grafana.grafana.svc.cluster.local:3000
+    - hostname: euniceb.org
+      service: http://kourier-internal.knative-serving.svc.cluster.local:80
+      originRequest:
+        httpHostHeader: gateway-service.euniceb-org.knative.dashaun.cloud
     - service: http_status:404
