@@ -22,3 +22,19 @@ spec:
         name: grafana
         namespace: flux-system
       interval: 1m
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: tempo
+  namespace: javagrunt-com
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: tempo
+      sourceRef:
+        kind: HelmRepository
+        name: grafana
+        namespace: flux-system
+      interval: 1m
