@@ -30,4 +30,4 @@ spec:
   values:
     concourse:
       web:
-        externalUrl: http://concourse.dashaun.cloud
+        externalUrl: https://dashaun.cloud
