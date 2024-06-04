@@ -82,3 +82,10 @@ creation_rules:
     pgp: ${K3D_JUICE_KEY_FP}
 EOF
 ```
+
+## env subst
+
+```bash
+kustomize build ./env/juice-docker-desktop | envsubst | kubectl apply -f -
+kustomize build ./env/dashaun-io-tunnel | envsubst | kubectl apply -f -
+```
