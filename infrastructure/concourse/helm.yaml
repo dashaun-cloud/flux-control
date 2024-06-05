@@ -30,6 +30,6 @@ spec:
   values:
     concourse:
       web:
-        externalUrl: https://dashaun.cloud
+        externalUrl: https://dashaun.io/concourse/
       worker:
         runtime: houdini
