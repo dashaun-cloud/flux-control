@@ -72,5 +72,5 @@ data:
     - hostname: "*.dashaun.io"
       service: http://kourier-internal.knative-serving.svc.cluster.local:80
       originRequest:
-        httpHostHeader: gateway-service.javagrunt-com.knative.dashaun.cloud
+        httpHostHeader: gateway-service.dashaun-io.knative.dashaun.cloud
     - service: http_status:404
