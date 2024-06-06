@@ -16,6 +16,22 @@ spec:
     name: flux-system
   timeout: 5m
   wait: true
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: javagrunt-com-secrets
+  namespace: flux-system
+spec:
+  interval: 1m
+  path: ./tenants/dashaun-io/secrets
+  prune: true
+  retryInterval: 2m0s
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  timeout: 5m
+  wait: true
   decryption:
     provider: sops
     secretRef:
