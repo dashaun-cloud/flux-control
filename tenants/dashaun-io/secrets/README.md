@@ -15,7 +15,7 @@ flux create kustomization secrets \
 ```
 
 ```bash
-kubectl -n javagrunt-com create secret generic yugabyte-cloud \
+kubectl -n dashaun-io create secret generic yugabyte-cloud \
 --from-literal=DATASOURCE_URL=$(bw get item yugabyte-cloud-free | jq -r .login.username) \
 --from-literal=DATASOURCE_USERNAME=admin \
 --from-literal=DATASOURCE_PASSWORD=$(bw get item yugabyte-cloud-free | jq -r .login.password) \

@@ -24,7 +24,6 @@ spec:
         name: ngrok
         namespace: dashaun-io
       interval: 1m
-  values:
-    credentials:
-      apiKey:
-      authtoken:
+  valuesFrom:
+    - kind: Secret
+      name: ngrok-values

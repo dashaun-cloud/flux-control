@@ -6,3 +6,9 @@ resources:
 - ngrok.yaml
 - openzipkin.yaml
 - ollama.yaml
+secretGenerator:
+  - name: ngrok-values
+    files:
+      - values.yaml=ngrok-values.enc.yaml
+configurations:
+  - kustomizeconfig.yaml
