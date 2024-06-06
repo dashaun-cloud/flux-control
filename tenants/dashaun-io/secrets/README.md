@@ -15,21 +15,12 @@ flux create kustomization secrets \
 ```
 
 ```bash
-kubectl -n dashaun-io create secret generic yugabyte-cloud \
---from-literal=DATASOURCE_URL=$(bw get item yugabyte-cloud-free | jq -r .login.username) \
---from-literal=DATASOURCE_USERNAME=admin \
---from-literal=DATASOURCE_PASSWORD=$(bw get item yugabyte-cloud-free | jq -r .login.password) \
+kubectl -n dashaun-io create secret generic tunnel-credentials \
+--from-literal=credentials.json=$(bw get item dashaun-io-tunnel-secret | jq -r .login.password) \
 --dry-run=client \
--o yaml > yugabyte-cloud.yaml
-```
-
-```bash
-kubectl -n javagrunt-com create secret generic tunnel-credentials \
---from-literal=credentials.json=$(bw get item javagrunt-com-tunnel-secret | jq -r .login.password) \
---dry-run=client\
 -o yaml > cloudflared-tunnel.yaml
 ```
 
 ```bash
-sops --encrypt --in-place yugabyte-cloud.yaml
+sops --encrypt --in-place cloudflared-tunnel.yaml
 ```
