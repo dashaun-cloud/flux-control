@@ -20,6 +20,8 @@ spec:
             - --config
             - /etc/cloudflared/config/config.yaml
             - run
+          ports:
+            - containerPort: 2000
           livenessProbe:
             httpGet:
               path: /ready
