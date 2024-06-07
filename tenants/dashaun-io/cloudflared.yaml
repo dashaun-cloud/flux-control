@@ -1,22 +1,20 @@
 ---
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: serving.knative.dev/v1
+kind: Service
 metadata:
   name: cloudflared
   namespace: dashaun-io
+  labels:
+    networking.knative.dev/visibility: cluster-local
 spec:
-  selector:
-    matchLabels:
-      app: cloudflared
-  replicas: 1
   template:
     metadata:
-      labels:
-        app: cloudflared
+      annotations:
+        autoscaling.knative.dev/min-scale: "1"
+        autoscaling.knative.dev/max-scale: "1"
     spec:
       containers:
-        - name: cloudflared
-          image: cloudflare/cloudflared:2024.6.0
+        - image: cloudflare/cloudflared:2024.6.0
           args:
             - tunnel
             - --config
