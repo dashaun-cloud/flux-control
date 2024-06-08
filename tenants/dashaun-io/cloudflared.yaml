@@ -69,4 +69,6 @@ data:
       service: http://kourier-internal.knative-serving.svc.cluster.local:80
       originRequest:
         httpHostHeader: gateway-service.dashaun-io.knative.dashaun.cloud
+    - hostname: concourse.dashaun.io
+      service: http://concourse-web.concourse.svc.cluster.local:8080
     - service: http_status:404
