@@ -13,7 +13,7 @@ flux bootstrap github \
 
 Add the private key to the cluster for SOPS:
 ```bash
-gpg --export-secret-keys --armor "${ARM64_KEY_FP}" |
+echo "$(bw get item k3d-juice.dashaun.cloud | jq -r .notes)" |
 kubectl create secret generic sops-gpg \
 --namespace=flux-system \
 --from-file=sops.asc=/dev/stdin
