@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m
-  path: ./infrastructure/knative-serving-arm64
+  path: ./infrastructure/knative-serving-arm64-local
   prune: true
   retryInterval: 2m0s
   sourceRef:
