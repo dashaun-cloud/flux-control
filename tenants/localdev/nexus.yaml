@@ -16,7 +16,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: standard
+#  storageClassName: standard
   hostPath:
     path: "/tmp/nexus-data"
     type: DirectoryOrCreate
@@ -33,7 +33,6 @@ spec:
   resources:
     requests:
       storage: 10Gi
-  storageClassName: local-path
 ---
 # nexus-deployment.yaml
 apiVersion: apps/v1
