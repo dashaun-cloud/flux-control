@@ -7,3 +7,4 @@ resources:
 - logging-pv.yaml
 - fluent-bit-collector.yaml
 - fluent-bit-configmap.yaml
+- config-map-pv.yaml
