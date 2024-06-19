@@ -15,13 +15,11 @@ spec:
   timeout: 5m
   wait: true
 ---
-apiVersion: operator.knative.dev/v1beta1
-kind: KnativeServing
+apiVersion: v1
+kind: ConfigMap
 metadata:
-  name: knative-serving
   namespace: knative-serving
-spec:
-  config:
-    features:
-      kubernetes.podspec-persistent-volume-claim: enabled
-      kubernetes.podspec-persistent-volume-write: enabled
+  name: config-features
+data:
+  kubernetes.podspec-persistent-volume-claim: "enabled"
+  kubernetes.podspec-persistent-volume-write: "enabled"
