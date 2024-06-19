@@ -86,3 +86,4 @@ spec:
         - name: nexus-data
           persistentVolumeClaim:
             claimName: nexus-pvc
+# kubectl exec nexus-55976bf6fd -n nexus cat /nexus-data/admin.password
