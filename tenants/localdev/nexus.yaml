@@ -18,7 +18,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: standard
   hostPath:
-    path: "/tmp/data/nexus-data"
+    path: "/tmp/nexus-data"
     type: DirectoryOrCreate
 ---
 # nexus-pvc.yaml
@@ -33,7 +33,7 @@ spec:
   resources:
     requests:
       storage: 10Gi
-  storageClassName: standard
+  storageClassName: local-path
 ---
 # nexus-deployment.yaml
 apiVersion: apps/v1
