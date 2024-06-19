@@ -33,7 +33,7 @@ spec:
   resources:
     requests:
       storage: 10Gi
-  storageClassName: local-path
+  storageClassName: standard
 ---
 # nexus-deployment.yaml
 apiVersion: apps/v1
