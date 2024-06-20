@@ -29,7 +29,10 @@ spec:
             - containerPort: 8080
           env:
             - name: CONCOURSE_POSTGRES_HOST
-              value: $(CONCOURSE_DB_RW_SERVICE_HOST)
+              valueFrom:
+                secretKeyRef:
+                  name: concourse-db-app
+                  key: host
             - name: CONCOURSE_POSTGRES_USER
               valueFrom:
                 secretKeyRef:
