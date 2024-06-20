@@ -181,28 +181,6 @@ spec:
               name: auth-keys
               readOnly: true
       dnsPolicy: ClusterFirst
-      initContainers:
-        - args:
-            - migrate
-            - --migrate-to-latest-version
-          env:
-            - name: CONCOURSE_POSTGRES_HOST
-              value: concourse-postgresql
-            - name: CONCOURSE_POSTGRES_USER
-              value: concourse
-            - name: CONCOURSE_POSTGRES_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  key: password
-                  name: concourse-postgresql
-            - name: CONCOURSE_POSTGRES_DATABASE
-              value: concourse
-          image: concourse/concourse:7.11.2
-          imagePullPolicy: IfNotPresent
-          name: concourse-migration
-          resources: {}
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
       serviceAccountName: concourse-web
       volumes:
         - name: concourse-keys
