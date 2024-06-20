@@ -52,6 +52,8 @@ spec:
               value: "http://concourse.concourse.127.0.0.1.sslip.io/"
             - name: CONCOURSE_ADD_LOCAL_USER
               value: "test:test"
+            - name: CONCOURSE_MAIN_TEAM_GITHUB_USER
+              value: "dashaun"
             - name: CONCOURSE_MAIN_TEAM_LOCAL_USER
               value: "test"
             - name: CONCOURSE_WORKER_BAGGAGECLAIM_DRIVER
@@ -70,6 +72,8 @@ spec:
               value: "8.8.8.8"
             - name: CONCOURSE_WORKER_RUNTIME
               value: "houdini"
+            - name: CONCOURSE_WORK_DIR
+              value: "/opt/concourse/worker"
             - name: CONCOURSE_GITHUB_CLIENT_ID
               valueFrom:
                 secretKeyRef:
