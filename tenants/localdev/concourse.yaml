@@ -70,3 +70,13 @@ spec:
               value: "8.8.8.8"
             - name: CONCOURSE_WORKER_RUNTIME
               value: "houdini"
+            - name: CONCOURSE_GITHUB_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: github-client
+                  key: id
+            - name: CONCOURSE_GITHUB_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: github-client
+                  key: secret
