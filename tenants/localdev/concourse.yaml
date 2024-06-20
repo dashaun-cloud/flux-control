@@ -67,5 +67,3 @@ spec:
               value: "8.8.8.8"
             - name: CONCOURSE_WORKER_RUNTIME
               value: "houdini"
-          securityContext:
-            privileged: true
