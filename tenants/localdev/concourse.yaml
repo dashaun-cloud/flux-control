@@ -208,7 +208,6 @@ spec:
       securityContext: {}
       serviceAccount: concourse-web
       serviceAccountName: concourse-web
-      terminationGracePeriodSeconds: 30
       volumes:
         - name: concourse-keys
           secret:
