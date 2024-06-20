@@ -3,3 +3,12 @@ kind: Namespace
 metadata:
   name: concourse
 ---
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: concourse-db
+  namespace: concourse
+spec:
+  instances: 3
+  storage:
+    size: 2Gi
