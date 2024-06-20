@@ -203,8 +203,6 @@ spec:
           resources: {}
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
-      schedulerName: default-scheduler
-      securityContext: {}
       serviceAccountName: concourse-web
       volumes:
         - name: concourse-keys
