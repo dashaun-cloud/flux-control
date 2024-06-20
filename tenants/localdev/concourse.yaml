@@ -205,7 +205,6 @@ spec:
           terminationMessagePolicy: File
       schedulerName: default-scheduler
       securityContext: {}
-      serviceAccount: concourse-web
       serviceAccountName: concourse-web
       volumes:
         - name: concourse-keys
