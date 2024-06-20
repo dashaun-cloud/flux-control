@@ -24,7 +24,6 @@ spec:
       containers:
         - name: concourse
           image: concourse/concourse
-          command: ["quickstart"]
           ports:
             - containerPort: 8080
           env:
