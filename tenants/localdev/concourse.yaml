@@ -12,3 +12,60 @@ spec:
   instances: 3
   storage:
     size: 2Gi
+---
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: concourse
+  namespace: concourse
+spec:
+  template:
+    spec:
+      containers:
+        - name: concourse
+          image: concourse/concourse
+          command: ["quickstart"]
+          ports:
+            - containerPort: 8080
+          env:
+            - name: CONCOURSE_POSTGRES_HOST
+              value: $(CONCOURSE_DB_RW_SERVICE_HOST)
+            - name: CONCOURSE_POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: concourse-db-app
+                  key: user
+            - name: CONCOURSE_POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: concourse-db-app
+                  key: password
+            - name: CONCOURSE_POSTGRES_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: concourse-db-app
+                  key: dbname
+            - name: CONCOURSE_EXTERNAL_URL
+              value: "http://concourse.concourse.127.0.0.1.sslip.io/"
+            - name: CONCOURSE_ADD_LOCAL_USER
+              value: "test:test"
+            - name: CONCOURSE_MAIN_TEAM_LOCAL_USER
+              value: "test"
+            - name: CONCOURSE_WORKER_BAGGAGECLAIM_DRIVER
+              value: "overlay"
+            - name: CONCOURSE_CLIENT_SECRET
+              value: "Y29uY291cnNlLXdlYgo="
+            - name: CONCOURSE_TSA_CLIENT_SECRET
+              value: "Y29uY291cnNlLXdvcmtlcgo="
+            - name: CONCOURSE_X_FRAME_OPTIONS
+              value: "allow"
+            - name: CONCOURSE_CONTENT_SECURITY_POLICY
+              value: "*"
+            - name: CONCOURSE_CLUSTER_NAME
+              value: "localdev"
+            - name: CONCOURSE_WORKER_CONTAINERD_DNS_SERVER
+              value: "8.8.8.8"
+            - name: CONCOURSE_WORKER_RUNTIME
+              value: "houdini"
+          securityContext:
+            privileged: true
