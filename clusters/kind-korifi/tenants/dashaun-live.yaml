@@ -1,0 +1,18 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: dashaun-live-tenant
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: knative-serving
+  interval: 1m
+  path: ./tenants/dashaun-live
+  prune: true
+  retryInterval: 2m0s
+  serviceAccountName: kustomize-controller
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  timeout: 5m
+  wait: true
