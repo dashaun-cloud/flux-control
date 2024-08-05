@@ -1,29 +1,33 @@
 ---
-apiVersion: serving.knative.dev/v1
-kind: Service
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: cloudflared
-  namespace: dashaun-live
-  labels:
-    networking.knative.dev/visibility: cluster-local
 spec:
+  selector:
+    matchLabels:
+      app: cloudflared
+  replicas: 1
   template:
     metadata:
-      annotations:
-        autoscaling.knative.dev/min-scale: "1"
-        autoscaling.knative.dev/max-scale: "1"
+      labels:
+        app: cloudflared
     spec:
       containers:
-        - image: cloudflare/cloudflared:2024.6.1
+        - name: cloudflared
+          image: cloudflare/cloudflared:2024.6.1
           args:
             - tunnel
+            # Points cloudflared to the config file, which configures what
+            # cloudflared will actually do. This file is created by a ConfigMap
+            # below.
             - --config
             - /etc/cloudflared/config/config.yaml
             - run
-          ports:
-            - containerPort: 2000
           livenessProbe:
             httpGet:
+              # Cloudflared has a /ready endpoint which returns 200 if and only if
+              # it has an active connection to the edge.
               path: /ready
               port: 2000
             failureThreshold: 1
@@ -33,6 +37,9 @@ spec:
             - name: config
               mountPath: /etc/cloudflared/config
               readOnly: true
+            # Each tunnel has an associated "credentials file" which authorizes machines
+            # to run the tunnel. cloudflared will read this file from its local filesystem,
+            # and it'll be stored in a k8s secret.
             - name: creds
               mountPath: /etc/cloudflared/creds
               readOnly: true
@@ -46,6 +53,7 @@ spec:
             # --from-file=credentials.json=/Users/yourusername/.cloudflared/<tunnel ID>.json
             # ```
             secretName: tunnel-credentials
+        # Create a config.yaml file from the ConfigMap below.
         - name: config
           configMap:
             name: cloudflared
