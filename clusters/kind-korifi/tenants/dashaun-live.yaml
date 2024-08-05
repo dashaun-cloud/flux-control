@@ -4,8 +4,6 @@ metadata:
   name: dashaun-live-tenant
   namespace: flux-system
 spec:
-  dependsOn:
-    - name: knative-serving
   interval: 1m
   path: ./tenants/dashaun-live
   prune: true
