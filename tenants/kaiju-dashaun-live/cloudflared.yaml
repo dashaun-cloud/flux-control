@@ -74,8 +74,8 @@ data:
     metrics: 0.0.0.0:2000
     no-autoupdate: true
     ingress:
-    - hostname: kaiju-concourse.dashaun.live
+    - hostname: concourse-kaiju.dashaun.live
       service: http://concourse-web.concourse.svc.cluster.local:8080
-    - hostname: kaiju-vault.dashaun.live
+    - hostname: vault-kaiju.dashaun.live
       service: http://vault-ui.vault.svc.cluster.local:8200
     - service: http_status:404
