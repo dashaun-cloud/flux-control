@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cloudflared
-  namespace: dashaun-live
+  namespace: kaiju-dashaun-live
 spec:
   selector:
     matchLabels:
@@ -69,7 +69,7 @@ metadata:
   namespace: dashaun-live
 data:
   config.yaml: |
-    tunnel: dashaun-live
+    tunnel: kaiju-dashaun-live
     credentials-file: /etc/cloudflared/creds/credentials.json
     metrics: 0.0.0.0:2000
     no-autoupdate: true
