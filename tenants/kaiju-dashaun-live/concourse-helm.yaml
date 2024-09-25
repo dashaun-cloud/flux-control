@@ -38,16 +38,17 @@ spec:
               user: "dashaun"
         clusterName: "Kaiju Pipelines"
         enableRedactSecrets: true
+        enableAcrossStep: true
         externalUrl: https://concourse-kaiju.dashaun.live
         jobSchedulingMaxInFlight: 1
         kubernetes:
-          teams:
-            - main
-            - dashaun-io
-            - dashaun-project-catalog
-            - euniceb-org
-            - javagrunt-com
+          enabled: false
         localAuth:
           enabled: false
+        vault:
+          enabled: true
+          url: http://vault.vault.svc.cluster.local:8200
+          authBackend: approle
+          useAuthParam: true
       worker:
         runtime: houdini
