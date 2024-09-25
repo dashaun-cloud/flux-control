@@ -78,4 +78,6 @@ data:
       service: http://concourse-web.concourse.svc.cluster.local:8080
     - hostname: vault-kaiju.dashaun.live
       service: http://vault-ui.vault.svc.cluster.local:8200
+    - hostname: api-vault-kaiju.dashaun.live
+      service: http://vault.vault.svc.cluster.local:8200
     - service: http_status:404
