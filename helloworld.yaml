@@ -1,0 +1,18 @@
+jobs:
+  - name: hello-world-job
+    plan:
+      - task: hello-world-task
+        config:
+          # Tells Concourse which type of worker this task should run on
+          platform: linux
+          # This is one way of telling Concourse which container image to use for a
+          # task. We'll explain this more when talking about resources
+          image_resource:
+            type: registry-image
+            source:
+              repository: busybox # images are pulled from docker hub by default
+          # The command Concourse will run inside the container
+          # echo "Hello world!"
+          run:
+            path: echo
+            args: ["Hello world!"]
