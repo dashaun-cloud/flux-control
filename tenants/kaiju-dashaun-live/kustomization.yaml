@@ -5,4 +5,4 @@ resources:
 - sync.yaml
 - cloudflared.yaml
 - vault-helm.yaml
-- concourse-helm.yaml
+#- concourse-helm.yaml
