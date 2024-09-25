@@ -66,7 +66,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: cloudflared
-  namespace: dashaun-live
+  namespace: kaiju-dashaun-live
 data:
   config.yaml: |
     tunnel: kaiju-dashaun-live
