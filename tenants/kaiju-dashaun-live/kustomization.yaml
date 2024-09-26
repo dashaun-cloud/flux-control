@@ -4,5 +4,3 @@ resources:
 - rbac.yaml
 - sync.yaml
 - cloudflared.yaml
-- vault-helm.yaml
-- concourse-helm.yaml
