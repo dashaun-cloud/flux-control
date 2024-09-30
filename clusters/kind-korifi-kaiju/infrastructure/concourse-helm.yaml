@@ -32,6 +32,8 @@ spec:
       web:
         auth:
           github:
+            client_id: ((vault:github-auth:github_client_id))
+            client_secret: ((vault:github-auth:github_client_secret))
             enabled: true
           mainTeam:
             github:
