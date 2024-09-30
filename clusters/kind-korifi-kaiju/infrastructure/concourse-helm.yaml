@@ -53,5 +53,4 @@ spec:
       worker:
         runtime: houdini
     secrets:
-      githubClientId: ((vault:github-auth:github_client_id))
-      githubClientSecret: ((vault:github-auth:github_client_secret))
+      create: false
