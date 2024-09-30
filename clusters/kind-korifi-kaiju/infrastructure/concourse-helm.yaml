@@ -29,8 +29,6 @@ spec:
       interval: 1m
   values:
     concourse:
-      secrets:
-        create: false
       web:
         auth:
           github:
@@ -54,3 +52,6 @@ spec:
           useAuthParam: true
       worker:
         runtime: houdini
+    secrets:
+      githubClientId: ((vault:github-auth:github_client_id))
+      githubClientSecret: ((vault:github-auth:github_client_secret))
