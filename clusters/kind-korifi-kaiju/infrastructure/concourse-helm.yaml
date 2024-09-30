@@ -52,3 +52,5 @@ spec:
           useAuthParam: true
       worker:
         runtime: houdini
+    secrets:
+      create: false
