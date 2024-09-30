@@ -30,8 +30,7 @@ spec:
   values:
     concourse:
       secrets:
-        githubClientId: ((vault:github-auth:github_client_id))
-        githubClientSecret: ((vault:github-auth:github_client_secret))
+        create: false
       web:
         auth:
           github:
